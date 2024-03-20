@@ -1,0 +1,18 @@
+name: Run MATLAB
+on:
+  workflow_dispatch: {}
+  push: {}
+jobs:
+  my-job:
+    runs-on: macos-14
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Setup MATLAB
+        uses: matlab-actions/setup-matlab@v2
+        with:
+          products: Simulink
+      - name: Run command
+        uses: matlab-actions/run-command@v2
+        with:
+          command: disp('hello world')
