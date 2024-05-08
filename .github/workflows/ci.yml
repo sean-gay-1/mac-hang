@@ -16,4 +16,4 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2
         with:
-          command: disp('hello world'); disp(version('-java'));
+          command: feature('diagnosticSpec', 'connector::.*=warning,error;cppmicroservices::.*=warning,error'); feature('diagnosticDest', 'stdout'); disp('hello world'); disp(version('-java')); 
