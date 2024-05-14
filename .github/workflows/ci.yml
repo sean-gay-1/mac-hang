@@ -11,8 +11,9 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2
         with:
+          products: Simulink
           release: R2023b
       - name: Run command
         uses: matlab-actions/run-command@v2
         with:
-          command: feature('diagnosticSpec', 'connector::.*=all;cppmicroservices::.*=all;agent::spf::.*=all'); feature('diagnosticDest', 'stdout'); disp('hello world'); disp(version('-java')); 
+          command: feature('diagnosticSpec', 'connector::.*=all;cppmicroservices::.*=all;agent::.*=all;mvm::.*=all'); feature('diagnosticDest', 'stdout'); disp('hello world'); disp(version('-java')); 
